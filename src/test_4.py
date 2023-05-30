@@ -13,3 +13,4 @@ def test_check_status_code(url_and_status):
     url, expected_status_code = url_and_status
     response = requests.get(url)
     assert response.status_code == expected_status_code
+    assert response.ok == (response.status_code == expected_status_code)
